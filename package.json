@@ -1,0 +1,18 @@
+{
+  "name": "seecode",
+  "version": "0.0.0",
+  "description": "走在前沿的前端导航",
+  "author": "ywanzhou",
+  "license": "MIT",
+  "scripts": {
+    "dev": "pnpm -C packages/web dev",
+    "start": "pnpm -C packages/serve start",
+    "start:dev": "pnpm -C packages/serve start:dev",
+    "start:debug": "pnpm -C packages/serve start:debug",
+    "start:prod": "pnpm -C packages/serve start:prod"
+  },
+  "main": "index.js",
+  "engines": {
+    "node": ">=16.11.0"
+  }
+}
