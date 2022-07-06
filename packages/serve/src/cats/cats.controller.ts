@@ -8,6 +8,7 @@ export class CatsController {
   constructor(private catsService: CatsService) {}
   @Post()
   async create(@Body() cat: CreateDto): Promise<void> {
+    console.log(cat);
     this.catsService.create(cat);
   }
 
