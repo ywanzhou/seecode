@@ -5,6 +5,7 @@ import {
   Body,
   UseFilters,
   UseGuards,
+  UseInterceptors,
 } from '@nestjs/common';
 import { ForbiddenException } from './../forbidden.exception';
 import { HttpExceptionFilter } from './../http-exception.filter';
@@ -12,11 +13,13 @@ import { CatsService } from './cats.service';
 import { CreateDto } from './dto/cat';
 import { Cat } from './interface/cat.interface';
 import { ValidationPipe } from './../validate.pipe';
+import { LoggingInterceptor } from '../logging.interceptor';
 import { AuthGuard } from './../roles.guard';
 import { Roles } from '../roles.decorator';
 
 @Controller('cats')
 @UseGuards(AuthGuard)
+@UseInterceptors(LoggingInterceptor)
 export class CatsController {
   constructor(private catsService: CatsService) {}
 
