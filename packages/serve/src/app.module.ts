@@ -7,9 +7,18 @@ import { AppService } from './app.service';
 import { CatModule } from './cats/cats.module';
 import { LoggerMiddleware } from './middleware/logger.middleware';
 import { UserModule } from './user/user.module';
+import { getConfig } from './utils/yaml';
 
 @Module({
-  imports: [CatModule, UserModule, ConfigModule.forRoot()],
+  imports: [
+    CatModule,
+    UserModule,
+    ConfigModule.forRoot({
+      ignoreEnvFile: true,
+      isGlobal: true,
+      load: [getConfig],
+    }),
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
