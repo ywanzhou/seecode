@@ -11,7 +11,8 @@ import {
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
-import { BusinessException } from 'src/common/exceptions/business.exception';
+// 自定义异常
+// import { BusinessException } from 'src/common/exceptions/business.exception';
 
 @Controller('user')
 export class UserController {
@@ -25,8 +26,7 @@ export class UserController {
   @Get()
   // @Version('1')
   findAll() {
-    const a: any = {};
-    console.log(a.b.c);
+    console.log(process.env);
     return this.userService.findAll();
   }
 
