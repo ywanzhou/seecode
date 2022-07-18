@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# OS
+.DS_Store
+
+# Tests
+/coverage
+/.nyc_output
