@@ -8,11 +8,15 @@
     "dev": "pnpm -C packages/web dev",
     "start": "pnpm -C packages/serve start",
     "start:dev": "pnpm -C packages/serve start:dev",
+    "start:hot": "pnpm -C packages/serve start:hot",
     "start:debug": "pnpm -C packages/serve start:debug",
     "start:prod": "pnpm -C packages/serve start:prod"
   },
   "main": "index.js",
   "engines": {
     "node": ">=16.11.0"
+  },
+  "dependencies": {
+    "axios": "^0.27.2"
   }
 }
