@@ -11,22 +11,30 @@ import {
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
+import { ConfigService } from '@nestjs/config';
 // 自定义异常
 // import { BusinessException } from 'src/common/exceptions/business.exception';
 
 @Controller('user')
 export class UserController {
-  constructor(private readonly userService: UserService) {}
+  constructor(
+    private readonly userService: UserService,
+    private readonly configService: ConfigService,
+  ) {}
 
   @Post()
   create(@Body() createUserDto: CreateUserDto) {
     return this.userService.create(createUserDto);
   }
 
+  // 获取自定义配置
+  @Get('getConfig')
+  getConfig() {
+    return this.configService.get('FEISHU_CONFIG');
+  }
   @Get()
   // @Version('1')
   findAll() {
-    console.log(process.env);
     return this.userService.findAll();
   }
 
