@@ -14,7 +14,7 @@ export const getConfig = () => {
   const yamlPath = join(process.cwd(), `./.config/.${environment}.yaml`);
   const yamlLocalPath = join(
     process.cwd(),
-    `./.config/.${environment}.lo1cal.yaml`,
+    `./.config/.${environment}.local.yaml`,
   );
   const file = readFileSync(yamlPath, 'utf8');
 
